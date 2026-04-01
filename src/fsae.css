@@ -15,10 +15,10 @@
   justify-content: space-between;
   padding: 0 2rem;
   height: var(--nav-h);
-  background: rgba(8, 8, 10, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   gap: 1rem;
 }
 
@@ -35,7 +35,7 @@
 .fsae-back:hover { color: var(--accent); }
 
 .fsae-nav-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--text-heading);
@@ -232,8 +232,8 @@
 .fsae-timeline-dot {
   width: 36px; height: 36px;
   border-radius: 50%;
-  background: var(--accent-dim);
-  border: 1px solid var(--accent-border);
+  background: rgba(34, 211, 238, 0.07);
+  border: 1px solid rgba(34, 211, 238, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;

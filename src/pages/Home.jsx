@@ -4,6 +4,7 @@ import {
   Mail, Phone, Download, ArrowRight, ChevronRight,
   MapPin, GraduationCap, Briefcase, Trophy, ExternalLink
 } from 'lucide-react'
+import heroImg from '../assets/hero.png'
 
 const skillCategories = [
   {
@@ -100,19 +101,19 @@ const projects = [
 function Navbar() {
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-logo">
-        Carson<span className="accent">.</span>
-      </Link>
-      <ul className="navbar-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <Link to="/" className="navbar-logo">CM</Link>
+      <div className="navbar-links-wrap">
+        <ul className="navbar-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
       <a href="mailto:Carsonrmalpass@gmail.com" className="btn-nav">
-        <Mail size={15} />
-        Hire Me
+        <Mail size={14} />
+        Let's Talk
       </a>
     </nav>
   )
@@ -123,6 +124,10 @@ function Hero() {
     <section className="hero">
       <div className="hero-bg" />
       <div className="hero-grid-overlay" />
+      <div className="hero-photo-bg">
+        <img src={heroImg} alt="Carson Malpass" />
+        <div className="hero-photo-bg-fade" />
+      </div>
       <div className="hero-inner">
         <div className="hero-text">
           <div className="hero-badge">
@@ -131,7 +136,7 @@ function Hero() {
           </div>
           <h1 className="hero-name">
             Carson R.<br />
-            <span className="accent">Malpass</span>
+            <span className="gradient-text">Malpass</span>
           </h1>
           <p className="hero-title">Mechanical Engineer</p>
           <p className="hero-description">
@@ -164,21 +169,13 @@ function Hero() {
               Resume
             </a>
           </div>
-        </div>
-        <div className="hero-photo-col">
-          <div className="hero-photo-frame">
-            <div className="hero-photo-placeholder">
-              <span className="hero-initials">CM</span>
-              <div className="hero-photo-ring" />
-            </div>
-            <div className="hero-photo-badge">
-              <Trophy size={14} />
-              <span>FSAE President</span>
-            </div>
-            <div className="hero-photo-badge hero-photo-badge-2">
-              <Settings size={14} />
-              <span>CSWA Certified</span>
-            </div>
+          <div className="hero-skill-pills">
+            <span className="hero-pill hero-pill-cyan">SolidWorks CSWA</span>
+            <span className="hero-pill hero-pill-indigo">FSAE President</span>
+            <span className="hero-pill hero-pill-cyan">FEA</span>
+            <span className="hero-pill">MATLAB</span>
+            <span className="hero-pill hero-pill-indigo">Ford FCG</span>
+            <span className="hero-pill">FE Mechanical</span>
           </div>
         </div>
       </div>
