@@ -55,11 +55,10 @@ const experiences = [
     color: 'muted',
     logo: '/images/logos/cu_fav.png',
     bullets: [
-      'Supported undergraduate mechanical engineering courses as a student apprentice',
-      'Assisted students with lab work, design projects, and technical questions',
-      'Helped develop and refine course materials and laboratory exercises',
+      'Provided leadership for a 250-person MCEN 2000 course, facilitating breakout groups, resume reviews, and critiquing student work',
+      'Supported industry events and contributed to new career initiatives and curriculum development',
     ],
-    tags: ['Teaching', 'Mentorship', 'Engineering Education'],
+    tags: ['Teaching', 'Mentorship', 'Curriculum Development'],
   },
   {
     year: '2024',
@@ -440,10 +439,8 @@ function Hero() {
           </h1>
           <p className="hero-title">Mechanical Engineer</p>
           <p className="hero-description">
-            B.S. Mechanical Engineering — University of Colorado Boulder. Minor in Engineering Management.
-            From Formula SAE racecars and space cameras to additive
-            manufacturing and locomotive hardware — I build things that have
-            to work.
+            B.S. Mechanical Engineering, University of Colorado Boulder. Minor in Engineering Management.
+            From Formula SAE racecars and space cameras to additive manufacturing and locomotive hardware.
           </p>
           <div className="hero-meta">
             <span className="hero-meta-item">
@@ -512,7 +509,7 @@ function About() {
             </p>
             <p>
               My engineering experience spans three professional internships
-              in additive manufacturing, aerospace hardware, and robotics —
+              in additive manufacturing, aerospace hardware, and mining,
               alongside four years of hands-on leadership building competition
               racecars as President, Project Manager, and Chief Chassis
               Engineer of CU-Boulder Racing Team.
@@ -520,12 +517,12 @@ function About() {
             <p>
               I thrive at the intersection of engineering excellence and
               leadership. Leading the CU-Boulder Racing Team as President,
-              Project Manager, and Chief Chassis Engineer — managing a
+              Project Manager, and Chief Chassis Engineer, managing a
               300+ member team and six-figure budget while designing and
-              integrating over 20 chassis subsystems — taught me that the best
+              integrating over 20 chassis subsystems, taught me that the best
               engineers own both sides. That same mindset carried into designing a
               high-vacuum chamber for Mars camera hardware at Malin Space
-              Science Systems, and co-developing a first-of-its-kind 3D
+              Science Systems and co-developing a first-of-its-kind 3D
               printer at Manifest Technologies.
             </p>
           </div>
@@ -714,9 +711,13 @@ function ProjectCarousel({ images }) {
   )
 }
 
+const DESC_THRESHOLD = 220
+
 function ProjectCard({ project }) {
   const [open, setOpen] = useState(false)
+  const [descOpen, setDescOpen] = useState(false)
   const hasBullets = project.bullets && project.bullets.length > 0
+  const isLongDesc = project.description && project.description.length > DESC_THRESHOLD
 
   const inner = (
     <div className={`project-card${project.featured ? ' project-featured' : ''}${open ? ' project-card--open' : ''}`}>
@@ -738,7 +739,13 @@ function ProjectCard({ project }) {
           {project.year && <span className="project-card-year">{project.year}</span>}
         </div>
         <h3 className="project-card-title">{project.title}</h3>
-        <p className="project-card-desc">{project.description}</p>
+        <p className="project-card-desc">
+          {isLongDesc && !descOpen
+            ? <>{project.description.slice(0, DESC_THRESHOLD).trimEnd()}… <button className="desc-show-more" onClick={e => { e.preventDefault(); e.stopPropagation(); setDescOpen(true) }}>Show more</button></>
+            : project.description
+          }
+          {isLongDesc && descOpen && <> <button className="desc-show-more" onClick={e => { e.preventDefault(); e.stopPropagation(); setDescOpen(false) }}>Show less</button></>}
+        </p>
         {hasBullets && (
           <div className="project-card-details">
             <div className="project-card-details-inner">
@@ -891,8 +898,11 @@ function Footer() {
       <div className="footer-inner">
         <p>© {new Date().getFullYear()} Carson R. Malpass · Mechanical Engineer</p>
         <div className="footer-links">
-          <a href="mailto:Carsonrmalpass@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/carsonmalpass/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="mailto:Carsonrmalpass@gmail.com"><Mail size={14} />Email</a>
+          <a href="https://www.linkedin.com/in/carsonmalpass/" target="_blank" rel="noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
     </footer>
@@ -909,6 +919,9 @@ export default function Home() {
       <Skills />
       <Projects />
       <Certifications />
+      <div className="quote-divider reveal">
+        <p className="site-quote">"A good design solves the problem. A great design makes you forget there was one."</p>
+      </div>
       <Contact />
       <Footer />
     </>
