@@ -10,11 +10,11 @@ const gallery = [
   { src: '/images/fsae/sw_assembly1.jpg', caption: 'Assembly during integration' },
   { src: '/images/fsae/sw_assembly2.jpg', caption: 'Paddle-shift mechanism detail' },
   { src: '/images/fsae/prev_steering_wheel.jpg', caption: 'Previous generation (CB4) – design reference' },
-  { src: '/images/fsae/cb2_render.png', caption: 'CU Racing vehicle render – CB2' },
+  { src: '/images/fsae/cb2_render.png', caption: 'CU-Boulder Racing Team vehicle render – CB2' },
 ]
 
 const specs = [
-  { label: 'Vehicle', value: 'CU Racing CB5 & CB6 (2024–2025)' },
+  { label: 'Vehicle', value: 'CU-Boulder Racing Team CB5 & CB6 (2024–2025)' },
   { label: 'Role', value: 'Chief Chassis Engineer & Steering Sub-Team Lead' },
   { label: 'Design Tool', value: 'SolidWorks 2024' },
   { label: 'Analysis', value: 'SolidWorks FEA (SimulationXpress + full Simulation)' },
@@ -84,7 +84,7 @@ export default function FSAEProject() {
           <div className="fsae-hero-overlay" />
         </div>
         <div className="fsae-hero-content">
-          <span className="section-label">Formula SAE · CU Racing</span>
+          <span className="section-label">Formula SAE · CU-Boulder Racing Team</span>
           <h1>Steering Wheel &amp; Column Design</h1>
           <p>
             Two-season design ownership for the CB5 and CB6 competition
@@ -109,7 +109,7 @@ export default function FSAEProject() {
             <div className="fsae-overview-grid">
               <div className="fsae-overview-text">
                 <p>
-                  As Steering Sub-Team Lead for CU Racing's CB5 and CB6
+                  As Steering Sub-Team Lead for CU-Boulder Racing Team's CB5 and CB6
                   competition vehicles, I owned the complete design lifecycle
                   of the steering wheel and column assembly — from initial
                   functional requirements through manufacturing and competition.
