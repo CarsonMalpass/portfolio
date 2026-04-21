@@ -502,7 +502,7 @@ function About() {
         <div className="about-grid">
           <div className="about-text">
             <p>
-              I'm Carson R. Malpass, a mechanical engineer and Product
+              My name is Carson Malpass, a mechanical engineer and Product
               Development Engineer FCG at Ford Motor Company. I hold a
               B.S. in Mechanical Engineering from the University of
               Colorado Boulder, with a minor in Engineering Management.
@@ -512,18 +512,18 @@ function About() {
               in additive manufacturing, aerospace hardware, and mining,
               alongside four years of hands-on leadership building competition
               racecars as President, Project Manager, and Chief Chassis
-              Engineer of CU-Boulder Racing Team.
+              Engineer of the CU Boulder Racing Team.
             </p>
             <p>
               I thrive at the intersection of engineering excellence and
-              leadership. Leading the CU-Boulder Racing Team as President,
-              Project Manager, and Chief Chassis Engineer, managing a
-              300+ member team and six-figure budget while designing and
+              leadership. Leading the CU-Boulder Racing, managing a 300+
+              member team and six-figure budget, and previously designing and
               integrating over 20 chassis subsystems, taught me that the best
-              engineers own both sides. That same mindset carried into designing a
-              high-vacuum chamber for Mars camera hardware at Malin Space
-              Science Systems and co-developing a first-of-its-kind 3D
-              printer at Manifest Technologies.
+              engineers know both sides. That same mindset carried into
+              co-designing a high-vacuum testing chamber for Mars camera
+              hardware at Malin Space Science Systems and assisting in the
+              design and development of a first-of-its-kind 3D-printer at
+              Manifest Technologies.
             </p>
           </div>
           <div className="about-stats">
