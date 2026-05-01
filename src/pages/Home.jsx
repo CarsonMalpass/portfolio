@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Settings, FlaskConical, Factory, Code2, Wrench, BarChart3,
   Mail, ArrowLeft, ArrowRight, ChevronRight, ChevronDown,
   MapPin, GraduationCap, Briefcase,
   ChevronLeft, Sun, Moon, Download, ExternalLink, Camera, Award,
@@ -111,32 +110,26 @@ const experiences = [
 
 const skillCategories = [
   {
-    Icon: Settings,
     category: 'CAD & Design',
-    tags: ['SolidWorks (CSWA)', 'SW FEA', 'SW Visualize', 'AutoCAD', 'Revit', 'SketchUp', 'GD&T'],
+    tags: ['SolidWorks (CSWA)', 'SW FEA', 'SW Visualize', 'AutoCAD', 'Revit', 'SketchUp'],
   },
   {
-    Icon: FlaskConical,
     category: 'Simulation & Analysis',
     tags: ['SolidWorks FEA', 'Structural Analysis', 'Thermal Analysis', 'EES', 'MATLAB'],
   },
   {
-    Icon: Factory,
     category: 'Manufacturing',
     tags: ['3D Printing (FDM/Resin)', 'Manual Mill & Lathe', 'MIG/TIG Welding', 'Sand Casting', 'Sheet Metal', 'Waterjet'],
   },
   {
-    Icon: Code2,
     category: 'Software & Electronics',
-    tags: ['MATLAB', 'C++', 'Arduino', 'LabVIEW', 'Eagle', 'PCB Mfg', 'Soldering'],
+    tags: ['MATLAB', 'C++', 'Arduino', 'Eagle', 'Soldering'],
   },
   {
-    Icon: Wrench,
     category: 'Engineering Practice',
     tags: ['Engineering Drawings', 'BOM & PRF', 'SOPs', 'PDR / CDR Reviews', 'FE – Mechanical'],
   },
   {
-    Icon: BarChart3,
     category: 'Leadership & Business',
     tags: ['Project Management', 'Operations', 'Recruitment', 'Client Relations', 'Budget Management'],
   },
@@ -641,11 +634,8 @@ function Skills() {
         </p>
         <div className="divider" />
         <div className="skills-grid">
-          {skillCategories.map(({ Icon, category, tags }) => (
+          {skillCategories.map(({ category, tags }) => (
             <div className="skill-card" key={category}>
-              <div className="skill-card-icon">
-                <Icon size={20} strokeWidth={1.5} />
-              </div>
               <h3 className="skill-card-title">{category}</h3>
               <div className="skill-tags">
                 {tags.map((tag) => (
