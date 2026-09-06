@@ -6,7 +6,7 @@ import {
   ChevronLeft, Sun, Moon, Download, ExternalLink, Camera, Award,
 } from 'lucide-react'
 import heroImg from '../assets/hero.png'
-import headshotImg from '../assets/headshot.jpeg'
+import headshotImg from '../assets/headshot.jpg'
 
 const experiences = [
   {
@@ -438,7 +438,7 @@ function Hero() {
           <div className="hero-meta">
             <span className="hero-meta-item">
               <MapPin size={14} />
-              Littleton, CO
+              Dearborn, MI
             </span>
             <span className="hero-meta-item">
               <GraduationCap size={14} />
